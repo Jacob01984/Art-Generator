@@ -12,6 +12,8 @@
 		BA3DADBD29BD44B30018CB4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3DADBC29BD44B30018CB4D /* Assets.xcassets */; };
 		BA3DADC029BD44B30018CB4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3DADBF29BD44B30018CB4D /* Preview Assets.xcassets */; };
 		BA3DADC729BD45880018CB4D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3DADC629BD45880018CB4D /* Launch Screen.storyboard */; };
+		BA3DADCB29BD48EB0018CB4D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DADCA29BD48EB0018CB4D /* Models.swift */; };
+		BA3DADCD29BD49A50018CB4D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DADCC29BD49A50018CB4D /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		BA3DADC629BD45880018CB4D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BA3DADC829BD46410018CB4D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA3DADC929BD468F0018CB4D /* Art-Generator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Art-Generator-Info.plist"; sourceTree = SOURCE_ROOT; };
+		BA3DADCA29BD48EB0018CB4D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BA3DADCC29BD49A50018CB4D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			children = (
 				BA3DADC929BD468F0018CB4D /* Art-Generator-Info.plist */,
 				BA3DADB829BD44B20018CB4D /* AppEntry.swift */,
+				BA3DADCA29BD48EB0018CB4D /* Models.swift */,
+				BA3DADCC29BD49A50018CB4D /* APIService.swift */,
 				BA3DADBA29BD44B30018CB4D /* ContentView.swift */,
 				BA3DADBC29BD44B30018CB4D /* Assets.xcassets */,
 				BA3DADC629BD45880018CB4D /* Launch Screen.storyboard */,
@@ -145,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3DADCB29BD48EB0018CB4D /* Models.swift in Sources */,
 				BA3DADBB29BD44B30018CB4D /* ContentView.swift in Sources */,
+				BA3DADCD29BD49A50018CB4D /* APIService.swift in Sources */,
 				BA3DADB929BD44B20018CB4D /* AppEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
