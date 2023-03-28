@@ -15,6 +15,7 @@
 		BA3DADCB29BD48EB0018CB4D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DADCA29BD48EB0018CB4D /* Models.swift */; };
 		BA3DADCD29BD49A50018CB4D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DADCC29BD49A50018CB4D /* APIService.swift */; };
 		BA3DADD229BD87A30018CB4D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3DADD129BD87A30018CB4D /* ViewModel.swift */; };
+		BA5393F729C0018800D87084 /* Stykes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5393F629C0018800D87084 /* Stykes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BA3DADCA29BD48EB0018CB4D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BA3DADCC29BD49A50018CB4D /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BA3DADD129BD87A30018CB4D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		BA5393F629C0018800D87084 /* Stykes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stykes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA34A52E29D33523000AE248 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA3DADD129BD87A30018CB4D /* ViewModel.swift */,
+				BA5393F629C0018800D87084 /* Stykes.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BA3DADAC29BD44B20018CB4D = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				BA3DADB829BD44B20018CB4D /* AppEntry.swift */,
-				BA3DADCE29BD796E0018CB4D /* Screens */,
+				BA3DADCE29BD796E0018CB4D /* Views */,
+				BA34A52E29D33523000AE248 /* ViewModel */,
 				BA3DADCF29BD797B0018CB4D /* Models */,
-				BA3DADCC29BD49A50018CB4D /* APIService.swift */,
 				BA3DADC829BD46410018CB4D /* Config.xcconfig */,
 				BA3DADC929BD468F0018CB4D /* Art-Generator-Info.plist */,
 				BA3DADC629BD45880018CB4D /* Launch Screen.storyboard */,
@@ -82,17 +93,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BA3DADCE29BD796E0018CB4D /* Screens */ = {
+		BA3DADCE29BD796E0018CB4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BA3DADD029BD798E0018CB4D /* DALLE Images */,
 			);
-			path = Screens;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BA3DADCF29BD797B0018CB4D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA3DADCC29BD49A50018CB4D /* APIService.swift */,
 				BA3DADCA29BD48EB0018CB4D /* Models.swift */,
 			);
 			path = Models;
@@ -102,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				BA3DADBA29BD44B30018CB4D /* DALLEImages.swift */,
-				BA3DADD129BD87A30018CB4D /* ViewModel.swift */,
 			);
 			path = "DALLE Images";
 			sourceTree = "<group>";
@@ -182,6 +193,7 @@
 				BA3DADCB29BD48EB0018CB4D /* Models.swift in Sources */,
 				BA3DADBB29BD44B30018CB4D /* DALLEImages.swift in Sources */,
 				BA3DADCD29BD49A50018CB4D /* APIService.swift in Sources */,
+				BA5393F729C0018800D87084 /* Stykes.swift in Sources */,
 				BA3DADB929BD44B20018CB4D /* AppEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

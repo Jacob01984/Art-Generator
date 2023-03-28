@@ -4,13 +4,13 @@
 //
 //  Created by Jacob Lavenant on 3/11/23.
 //
-//2️⃣
+//
 
 import SwiftUI
 
 enum Constants {
-    static let imageSize = "256x256"  //generated image size
-    static let n = 4                //number of images created
+    static let imageSize = "256x256"
+    static let n = 4
 }
 
 struct GenerationInput: Codable {
@@ -18,17 +18,17 @@ struct GenerationInput: Codable {
     var n = Constants.n
     var size = Constants.imageSize
     
-    var encodedData: Data? {        //encoding data for submission to API
+    var encodedData: Data? {
         try? JSONEncoder().encode(self)
     }
 }
-//struct that stores generated images for a array 3️⃣
+
 struct DalleImage: Identifiable {
     var id = UUID()
-    var uiImage: UIImage?       //each image will be nil til we retrieve from api
+    var uiImage: UIImage?
 }
 
-struct ResponseModel: Codable {     //Decode response data from the API
+struct ResponseModel: Codable {
     struct Data: Codable {
         let url: URL
     }

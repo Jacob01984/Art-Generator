@@ -4,47 +4,69 @@
 //
 //  Created by Jacob Lavenant on 3/11/23.
 //
-//5️⃣
+//
 
 import SwiftUI
 
 
-@MainActor      //we need to update the ui due to the calls to the api
+@MainActor
 class ViewModel: ObservableObject {
     @Published var prompt = ""
-    @Published var urls: [URL] = []     //array of urls generated from api
-    @Published var dallEImages: [DalleImage] = []       //fetch images from urls and update array of generated images [DallEImage]
+    @Published var urls: [URL] = []
+    @Published var dallEImages: [DalleImage] = []
     @Published var fetching = false     //boolean property to monitor fetching process so we can then use it to prevent users from clicking on anything during fetching process
     
-    let apiService = APIService()       //instance of APIService
+    @Published var selectedImage: UIImage?
+
+    @Published var imageStyle = ImageStyle.none
+    @Published var imageMedium = ImageMedium.none
+    @Published var artist = Artist.none
+
+    var description: String {
+        let characterists = imageStyle.description + imageMedium.description + artist.description
+        return prompt + (!characterists.isEmpty ? "\n- " + characterists : "")
+    }
+    
+
+    let apiService = APIService()
     
     func clearProperties () {       //Clear out exsiting images upon opening the app
         urls = []
-        dallEImages.removeAll()     //removes images from dallEImages which has the DalleImage array
+        dallEImages.removeAll()
         for _ in 1...Constants.n {
             dallEImages.append(DalleImage())
         }
-    }       //initializer that declares clearProperties func
+        selectedImage = nil
+    }
+
+    func reset() {
+        clearProperties()
+        imageStyle = .none
+        imageMedium = .none
+        artist = .none
+    }
+    
     init() {
         clearProperties()
     }
+    
     func fetchImages() {        //keep track of fetching state
         clearProperties()
         withAnimation {
             fetching.toggle()   //Fetching = true
         }
-        let generationInput = GenerationInput(prompt: prompt)   //New GenerationInput passing the prompt
+        let generationInput = GenerationInput(prompt: description)
         Task {
-            if let data = generationInput.encodedData {     //use if let to see if we get data from generationInput objects
+            if let data = generationInput.encodedData {
                 do {
-                    let response = try await apiService.fetchImages(with: data)     //let response be the result of trying and awaiting the call to the api
-                    for data in response.data {     //response.data is the array of objects that has a url property
-                        urls.append(data.url)    //append each URL property to the URL's array
+                    let response = try await apiService.fetchImages(with: data)
+                    for data in response.data {
+                        urls.append(data.url)    
                     }
                     withAnimation {
                         fetching.toggle()   //fetching = false
                     }
-//6️⃣ after fetching we will retrieve all the images
+
                     for (index, url) in urls.enumerated() {
                         dallEImages[index].uiImage = await apiService.loadImage(at: url)
                     }
